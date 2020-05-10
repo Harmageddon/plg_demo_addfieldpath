@@ -1,0 +1,11 @@
+<form>
+	<fields>
+		<fieldset name="items">
+			<field
+				type="color"
+				name="color"
+				label="Color"
+			/>
+		</fieldset>
+	</fields>
+</form>

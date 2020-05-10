@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="system" method="upgrade">
+	<name>plg_system_demo_addfieldpath</name>
+	<author>Constantin Romankiewicz</author>
+	<creationDate>2020-05-10</creationDate>
+	<authorEmail>constantin@zweiiconkram.de</authorEmail>
+	<authorUrl>www.zweiiconkram.de</authorUrl>
+	<version>0.0.1</version>
+	<description>This plugin doesn't do anything. Its sole purpose is the demonstration of form features in Joomla!.</description>
+	<namespace path="src">Joomla\Plugin\System\DemoAddFieldPath</namespace>
+	<files>
+		<filename plugin="demo_addfieldpath">demo_addfieldpath.php</filename>
+		<folder>fields</folder>
+		<folder>filters</folder>
+		<folder>forms</folder>
+		<folder>rules</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset
+				name="basic"
+				addfieldpath="plugins/system/demo_addfieldpath/fields,plugins/system/demo_addfieldprefix/fields"
+				addfilterpath="plugins/system/demo_addfieldpath/filters,plugins/system/demo_addfieldprefix/filters"
+				addformpath="plugins/system/demo_addfieldpath/forms,plugins/system/demo_addfieldprefix/forms"
+				addrulepath="plugins/system/demo_addfieldpath/rules,plugins/system/demo_addfieldprefix/rules"
+			>
+				<field
+					name="article"
+					type="myfield"
+					label="Article"
+					description="Select an article"
+					select="true"
+					new="true"
+					edit="true"
+					clear="true"
+					filter="integer"
+				/>
+				<field
+					name="menu_item"
+					type="otherfield"
+					label="Menu Item"
+					description="Select a menu item"
+					select="true"
+					new="true"
+					edit="true"
+					clear="true"
+					filter="integer"
+				/>
+				<field
+					name="filter_rule"
+					type="text"
+					label="Filter and Rule test"
+					description="You need to include an a here. Enter text in lower-case and make sure it's in upper-case after."
+					filter="myfilter"
+					validate="myrule"
+				/>
+				<field
+					name="filter_rule2"
+					type="text"
+					label="Filter and Rule test 2"
+					description="You need to include a b here. Enter text in upper-case and make sure it's in lower-case after."
+					filter="otherfilter"
+					validate="otherrule"
+				/>
+				<field
+					name="subform_colors"
+					type="subform"
+					label="Subform"
+					formsource="colors"
+					multiple="true"
+				/>
+				<field
+					name="subform_items"
+					type="subform"
+					label="Subform"
+					formsource="items"
+					multiple="true"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
